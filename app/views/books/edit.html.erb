@@ -1,0 +1,8 @@
+<h4>Update book ?</h4>
+
+<%= simple_form_for(@book) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
