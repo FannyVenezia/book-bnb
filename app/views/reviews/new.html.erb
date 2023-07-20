@@ -1,0 +1,7 @@
+<h4>New review ?</h4>
+
+<%= simple_form_for [@book, @review] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
