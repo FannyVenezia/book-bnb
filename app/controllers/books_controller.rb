@@ -28,7 +28,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to restaurants_path, status: :see_other
+    redirect_to books_path, status: :see_other
   end
 
   private

@@ -2,4 +2,6 @@
 <%= @book.author %>
 
 <%= link_to "Delete", book_path(@book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+%><%= link_to "Retour à la liste", books_path %>
+
+<%= link_to "Modifier le livre", edit_book_path(@book) %>

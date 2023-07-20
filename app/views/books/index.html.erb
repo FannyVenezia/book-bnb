@@ -1,3 +1,6 @@
 <% @books.each do |book| %>
   <%= link_to book.title, book_path(book) %>
 <% end %>
+
+<p>Enregistrer un nouveau livre :</p>
+<%= link_to "Ajouter", new_book_path %>

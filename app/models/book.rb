@@ -1,2 +1,7 @@
 class Book < ApplicationRecord
+  has_many :reviews
+
+  validates :title, presence: true
+  validates :author, presence: true
+  validates :description, presence: true, length: { minimum: 10 }
 end
