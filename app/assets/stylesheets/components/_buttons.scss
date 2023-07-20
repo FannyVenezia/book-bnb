@@ -1,0 +1,46 @@
+.btn-background-purple {
+  color: white;
+  background-color: rgb(134, 25, 134);
+  padding: 12px 21px;
+  text-decoration: none;
+  border-radius: 20px;
+  &:hover {
+    color: rgb(134, 25, 134);
+    background-color: white;
+  }
+}
+
+.containerform {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,70,121,0.5662464815027574) 35%, rgba(0,212,255,1) 100%);
+}
+
+.btn-purple {
+  text-decoration: none;
+  color: rgb(134, 25, 134);
+  &:hover {
+    color: white;
+    background-color: rgb(134, 25, 134);
+    padding: 10px 14px;
+    border-radius: 20px;
+  }
+}
+
+.btn-purple-corner {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgb(134, 25, 134);
+  padding: 12px 22px;
+  text-decoration: none;
+  width: 312px;
+  text-align: center;
+  border-radius: 6px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  &:hover {
+    color: rgb(134, 25, 134);
+    background-color: white;
+  }
+}

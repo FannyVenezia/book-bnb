@@ -1,2 +1,6 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<h3>Tous mes avis</h3>
+<% current_user.reviews.each do |review| %>
+  <%= review.title %>
+  <%= link_to "La modifier", edit_review_path(review) %>
+  <%= link_to "La supprimer", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>

@@ -1,12 +1,39 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.nav-link {
+  color: white;
+  font-weight: bold;
+  &:hover {
+    color: rgb(84, 84, 168);
+    background-color: white;
+    border-radius: 10px;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.icon-user {
+  height: 70px;
+  width: 70px;
+  margin-right: 10px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// Specific CSS for your home-page
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.banner-home {
+	padding: 95px;
+	text-align: center;
+  background-size: cover;
+  opacity: 2;
+  margin-top: 60px;
+  h2 {
+    margin-bottom: 30px;
+  }
 }

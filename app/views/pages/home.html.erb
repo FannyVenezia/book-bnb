@@ -1,4 +1,8 @@
-<h1>Pages#home</h1>
-<%= image_tag "logo.png", alt: "Le Wagon", width: 200 %>
+<video id="background-video" autoplay loop muted>
+  <source src="https://res.cloudinary.com/dsas0wiz2/video/upload/v1671725369/development/car_video_home_page_fqfbhw.mp4" type="video/mp4">
+</video>
 
-<%= link_to "Liste des livres", books_path %>
+<div class="banner-home">
+  <h1>Voyagez avec nos livres</h1>
+  <%= link_to "go !", books_path, class: "btn-background-purple" %>
+</div>
