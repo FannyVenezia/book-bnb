@@ -1,5 +1,9 @@
-<% @books.each do |book| %>
-  <%= link_to book.title, book_path(book) %>
+<% if @books.any? %>
+  <% @books.each do |book| %>
+    <%= link_to book.title, book_path(book) %>
+  <% end %>
+<% else %>
+  <em>Sorry, no books found.</em>
 <% end %>
 
 <p>Enregistrer un nouveau livre :</p>

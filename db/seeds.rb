@@ -4,10 +4,11 @@ require 'open-uri'
 puts 'Cleaning database...'
 
 Book.destroy_all
+User.destroy_all
 
 puts 'Creating books...'
 
-# User.create(email: 'titi@gmail.com', password: 'tititi', first_name: 'Jean-Loup')
+user1 = User.create(email: 'titi@gmail.com', password: 'tititi', first_name: 'Jean-Loup', last_name: 'Paroug')
 
 book1 = URI.open("https://res.cloudinary.com/dsas0wiz2/image/upload/v1682602473/alpes.jpg")
 book2 = URI.open("https://res.cloudinary.com/dsas0wiz2/image/upload/v1671797407/development/car.jpg")
@@ -23,7 +24,8 @@ book_1 = Book.new(
   genre: 'Real life',
   editor: 'Gallimard',
   published: '20019',
-  description: 'Un régal de drôlerie et de philosophie'
+  description: 'Un régal de drôlerie et de philosophie',
+  user: user1
 )
 book_1.photos.attach(book_1_photos)
 book_1.save
@@ -35,7 +37,8 @@ book_1.save
     genre: Faker::Book.genre,
     editor: Faker::Book.publisher,
     published: Faker::Address.building_number,
-    description: Faker::Quote.famous_last_words
+    description: Faker::Quote.famous_last_words,
+    user: user1
   )
   book.save!
 end
