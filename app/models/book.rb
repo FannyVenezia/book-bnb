@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  has_many_attached :photos
+
   has_many :reviews, dependent: :destroy
 
   validates :title, presence: true

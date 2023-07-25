@@ -3,6 +3,10 @@
 <%= simple_form_for(@book) do |f| %>
   <%= f.input :title %>
   <%= f.input :author %>
+  <%= f.input :genre %>
+  <%= f.input :published %>
+  <%= f.input :editor %>
   <%= f.input :description %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>

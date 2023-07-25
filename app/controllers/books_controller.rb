@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @books = Book.all
@@ -14,8 +15,11 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.save
-    redirect_to book_path(@book)
+    if @book.save
+      redirect_to book_path(@book), notice: "Your book was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -34,7 +38,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :description)
+    params.require(:book).permit(:title, :author, :genre, :published, :editor, :description, photos: [])
   end
 
   def set_book
