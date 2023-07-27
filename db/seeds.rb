@@ -25,10 +25,22 @@ book_1 = Book.new(
   editor: 'Gallimard',
   published: '20019',
   description: 'Un régal de drôlerie et de philosophie',
+  address: '59 Avenue Charles de Gaulle 13140 Miramas',
   user: user1
 )
 book_1.photos.attach(book_1_photos)
 book_1.save
+
+Book.create!(
+  title: 'Henri Pick',
+  author: 'David Foenkinos',
+  genre: 'Real life',
+  editor: 'Gallimard',
+  published: '20019',
+  description: 'Un régal de drôlerie et de philosophie',
+  address: '62 Impasse des Floralies 34000 Montpellier',
+  user: user1
+)
 
 10.times do
   book = Book.new(
@@ -38,6 +50,7 @@ book_1.save
     editor: Faker::Book.publisher,
     published: Faker::Address.building_number,
     description: Faker::Quote.famous_last_words,
+    address: Faker::Address.full_address,
     user: user1
   )
   book.save!
