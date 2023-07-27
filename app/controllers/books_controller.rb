@@ -7,6 +7,15 @@ class BooksController < ApplicationController
     if params[:query].present?
       @books = @books.where("title ILIKE ?", "%#{params[:query]}%")
     end
+
+    @markers = @books.geocoded.map do |book|
+      {
+        lat: book.latitude,
+        lng: book.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {book: book}),
+        image_url: helpers.asset_url("logo.png")
+      }
+    end
   end
 
   def show

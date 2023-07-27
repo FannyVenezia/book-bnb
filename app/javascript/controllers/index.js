@@ -4,10 +4,16 @@
 
 import { application } from "./application"
 
+import AddressAutocompleteController from "./address_autocomplete_controller"
+application.register("address-autocomplete", AddressAutocompleteController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import NavbarController from "./navbar_controller.js"
+import MapController from "./map_controller"
+application.register("map", MapController)
+
+import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 
 import TypedJsController from "./typed_js_controller"
